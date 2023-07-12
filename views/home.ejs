@@ -9,7 +9,26 @@
 </head>
 
 <body>
-    users
+    <h1>
+        Url Shortener
+    </h1>
+    <% if(locals.id) { %>
+        <p>
+            URL Generated:http://localhost:8000/url/<%= id %>
+
+        </p>
+        <% } %>
+
+            <div>
+                <form action="/url" method="post">
+                    <label for="">Enter Orignal Url</label>
+                    <input type="text" name="redirectUrl" placeholder="https://example.com">
+                    <button type="submit" onclick=(console.log(FormData))>Generate</button>
+                </form>
+            </div>
+            <div>
+            
+            </div>
 
 </body>
 

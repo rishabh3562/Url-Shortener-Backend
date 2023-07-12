@@ -2,10 +2,10 @@ const express = require('express');
 const urlSchema = require("../models/url");
 const shortid = require("shortid");
 const router = express.Router();
-
+const validator = require("validator");
 
 //get all
-router.get('/', generateShortUrl);
+
 
 
 //redirect
@@ -66,7 +66,11 @@ router.post('/', async (req, res) => {
     })
     await newUrl.save();
     console.log(" new url in controller.js: ", newUrl);
-    return res.json({ id: shortUrlId })
+    // return res.json({ id: shortUrlId })
+    return res.render("home", {
+        id: newUrl.shortId,
+    })
+
 });
 
 

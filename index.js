@@ -22,8 +22,25 @@ app.use("/url", urlRoute);
 
 app.get('/', (req, res) => {
     const allUrls = urlSchema.find({});
+    console.log("start")
+   
     res.render("home", { urls: allUrls });
 })
+// app.get("/test", async (req, res) => {
+//     const allUrls = urlSchema.find({});
+//     return res.render(`
+//     <html>
+//     <head></head>
+//     <body>
+//     <ol>
+//     ${allUrls.map((url) => `<li>${url.shortId}-</li>`)
+//         }
+//     </ol>
+//     </body>
+//     </html>
+
+//     `);
+// })
 connect = async () => {
     const connectionParams = {
         useNewUrlParser: true,
